@@ -1,6 +1,6 @@
 # S3 bucket for static site
 resource "aws_s3_bucket" "static_site" {
-  bucket = "${var.project_name}-${var.environment}-static-site"
+  bucket = "${var.project_name}-${var.environment}-${data.aws_caller_identity.current.account_id}-${var.aws_region}"
 }
 
 resource "aws_s3_bucket_public_access_block" "static_site" {
