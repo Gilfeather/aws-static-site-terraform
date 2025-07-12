@@ -93,6 +93,15 @@ resource "aws_cloudfront_distribution" "static_site" {
     default_ttl            = var.cache_default_ttl
     max_ttl                = var.cache_max_ttl
     compress               = var.enable_compression
+    
+    # セキュリティヘッダー機能を追加
+    dynamic "function_association" {
+      for_each = var.enable_security_headers ? [1] : []
+      content {
+        event_type   = "viewer-response"
+        function_arn = aws_cloudfront_function.security_headers[0].arn
+      }
+    }
   }
 
   # Error pages for SPA routing (conditional)
@@ -132,8 +141,9 @@ resource "aws_cloudfront_distribution" "static_site" {
   })
 }
 
-# S3 bucket policy for CloudFront OAC
+# S3 bucket policy for CloudFront OAC (basic or enhanced)
 resource "aws_s3_bucket_policy" "static_site" {
+  count  = var.enable_enhanced_s3_policy ? 0 : 1
   bucket = aws_s3_bucket.static_site.id
 
   policy = jsonencode({

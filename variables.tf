@@ -185,6 +185,37 @@ variable "geo_restriction_locations" {
   default     = []
 }
 
+# Security Configuration
+variable "enable_security_headers" {
+  description = "Enable CloudFront security headers function"
+  type        = bool
+  default     = true
+}
+
+variable "enable_enhanced_s3_policy" {
+  description = "Enable enhanced S3 bucket policy with additional security"
+  type        = bool
+  default     = true
+}
+
+variable "enable_cloudwatch_logs" {
+  description = "Enable CloudWatch logs for monitoring"
+  type        = bool
+  default     = true
+}
+
+variable "enable_basic_monitoring" {
+  description = "Enable basic CloudWatch monitoring"
+  type        = bool
+  default     = true
+}
+
+variable "enable_s3_notifications" {
+  description = "Enable S3 bucket notifications"
+  type        = bool
+  default     = false
+}
+
 # Tags
 variable "tags" {
   description = "Additional tags to apply to resources"
