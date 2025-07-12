@@ -42,6 +42,13 @@ minimum_protocol_version = "TLSv1.2_2021"
 geo_restriction_type      = "none"  # none, whitelist, or blacklist
 geo_restriction_locations = []      # List of country codes (e.g., ["US", "CA"])
 
+# Security Configuration (無料でできるセキュリティ強化)
+enable_security_headers    = true   # CloudFrontセキュリティヘッダー
+enable_enhanced_s3_policy  = true   # S3セキュリティポリシー強化
+enable_cloudwatch_logs     = true   # CloudWatchログ
+enable_basic_monitoring    = true   # 基本的な監視
+enable_s3_notifications    = false  # S3通知（オプション、無料範囲内）
+
 # Additional Tags
 tags = {
   Owner       = "YourName"
