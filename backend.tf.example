@@ -1,0 +1,18 @@
+# Example backend configuration
+# Copy this file to backend.tf and customize for your environment
+# Alternatively, configure backend during terraform init
+
+terraform {
+  backend "s3" {
+    bucket  = "your-terraform-state-bucket"
+    key     = "static-site/terraform.tfstate"
+    region  = "your-region"
+    profile = "your-aws-profile"
+    
+    # Optional: Enable state locking
+    # dynamodb_table = "terraform-state-locks"
+    
+    # Optional: Enable encryption
+    # encrypt = true
+  }
+}

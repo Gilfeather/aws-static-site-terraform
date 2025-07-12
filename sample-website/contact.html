@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Example Sample</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #333;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            width: 30px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+        
+        .demo-note {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📞 Contact</h1>
+        
+        <div class="demo-note">
+            <strong>📝 Note:</strong> これはデモサイトです。実際の連絡先ではありません。
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>🌐</span>
+                <span>Website: sample.example.com</span>
+            </div>
+            <div class="contact-item">
+                <span>☁️</span>
+                <span>Cloud: AWS</span>
+            </div>
+            <div class="contact-item">
+                <span>🏗️</span>
+                <span>Infrastructure: Terraform</span>
+            </div>
+            <div class="contact-item">
+                <span>📦</span>
+                <span>CDN: Amazon CloudFront</span>
+            </div>
+            <div class="contact-item">
+                <span>🔐</span>
+                <span>SSL: AWS Certificate Manager</span>
+            </div>
+        </div>
+        
+        <h2 style="margin: 2rem 0 1rem 0;">🚀 Deployment Info</h2>
+        <ul style="line-height: 2; margin-left: 2rem;">
+            <li><strong>Deployed:</strong> <span id="deploy-time"></span></li>
+        </ul>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">← ホームに戻る</a>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('deploy-time').textContent = new Date().toLocaleString('ja-JP');
+    </script>
+</body>
+</html>

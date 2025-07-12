@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Example Sample</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd93d, #ff6b6b);
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📖 About This Site</h1>
+        
+        <p style="font-size: 1.1rem; line-height: 1.6; margin: 1rem 0;">
+            このサイトは、AWS上で動作する静的サイトのサンプルです。<br>
+            Terraformを使って完全自動化されたインフラストラクチャで構築されています。
+        </p>
+        
+        <h2 style="margin: 2rem 0 1rem 0;">🛠️ Technology Stack</h2>
+        
+        <div class="tech-stack">
+            <div class="tech-item">
+                <h3>🏗️ Infrastructure</h3>
+                <p>Terraform<br>AWS S3, CloudFront, Route53</p>
+            </div>
+            <div class="tech-item">
+                <h3>🔐 Security</h3>
+                <p>ACM SSL/TLS Certificate<br>Origin Access Control</p>
+            </div>
+            <div class="tech-item">
+                <h3>⚡ Performance</h3>
+                <p>Global CDN<br>Edge Caching</p>
+            </div>
+            <div class="tech-item">
+                <h3>🚀 Deployment</h3>
+                <p>Automated Scripts<br>CI/CD Ready</p>
+            </div>
+        </div>
+        
+        <h2 style="margin: 2rem 0 1rem 0;">📋 Features</h2>
+        <ul style="line-height: 2; margin-left: 2rem;">
+            <li>自動SSL証明書発行・更新</li>
+            <li>グローバルCDN配信</li>
+            <li>SPA (Single Page Application) サポート</li>
+            <li>セキュアなS3設定</li>
+            <li>Terraformステート管理</li>
+            <li>レスポンシブデザイン</li>
+        </ul>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">← ホームに戻る</a>
+        </div>
+    </div>
+</body>
+</html>

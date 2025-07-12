@@ -1,0 +1,51 @@
+# AWS Configuration
+aws_account_id = "123456789012"  # Your actual AWS Account ID
+aws_region     = "us-east-1"
+aws_profile    = "default"       # AWS profile to use
+# assume_role_arn = "arn:aws:iam::123456789012:role/your-role"  # Optional: IAM role to assume
+
+# Terraform State (optional - can be configured in backend.tf or terraform init)
+# terraform_state_bucket = "your-terraform-state-bucket"
+# terraform_state_key    = "static-site/terraform.tfstate"
+
+# Project Configuration
+project_name = "your-project"  # Must be lowercase, alphanumeric with hyphens only
+environment  = "dev"           # dev, staging, or prod
+
+# Domain Configuration
+domain_name      = "example.com"  # Your registered domain
+subdomain        = "app"          # Subdomain for the site (e.g., app.example.com)
+use_apex_domain  = false          # Set to true to use the apex domain (example.com)
+
+# SSL Certificate Configuration
+create_certificate              = true   # Set to false to use existing certificate
+# existing_certificate_arn      = "arn:aws:acm:us-east-1:123456789012:certificate/abc123"  # Only needed if create_certificate = false
+certificate_alternative_names   = []     # Additional domains for the certificate (e.g., ["www.example.com"])
+
+# Static Site Configuration
+default_root_object = "index.html"
+error_page_path     = "/index.html"  # For SPA routing
+enable_spa_routing  = true           # Enable SPA error page redirects
+
+# CloudFront Configuration
+cache_default_ttl    = 3600      # 1 hour
+cache_max_ttl        = 86400     # 24 hours
+enable_compression   = true
+price_class         = "PriceClass_100"  # PriceClass_All, PriceClass_200, PriceClass_100
+
+# Security Configuration
+enable_s3_versioning     = true
+s3_encryption_algorithm  = "AES256"      # AES256 or aws:kms
+minimum_protocol_version = "TLSv1.2_2021"
+
+# Geo Restriction (optional)
+geo_restriction_type      = "none"  # none, whitelist, or blacklist
+geo_restriction_locations = []      # List of country codes (e.g., ["US", "CA"])
+
+# Additional Tags
+tags = {
+  Owner       = "YourName"
+  Team        = "YourTeam"
+  Environment = "Development"
+  CostCenter  = "Engineering"
+} 
