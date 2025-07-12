@@ -121,3 +121,6 @@ prod.tfvars
 # Keep example files
 !terraform.tfvars.example
 !backend.tf.example
+
+# Keep security configuration files
+!security-headers.js
